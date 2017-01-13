@@ -1,6 +1,6 @@
 FROM frolvlad/alpine-oraclejdk8:slim
 VOLUME /tmp
-ADD gs-spring-boot-docker-0.1.0.jar app.jar
-RUN sh -c 'touch /app.jar'
+ADD hello-world-0.0.1-SNAPSHOT.jar hello-world.jar
+RUN sh -c 'touch /hello-world.jar'
 ENV JAVA_OPTS=""
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /hello-world.jar" ]
