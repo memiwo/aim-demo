@@ -19,20 +19,20 @@ public class AimDemoApplicationTests {
 	private TestRestTemplate restTemplate;
 
 	@Test
-	public void testGreetingDefault() {
+	public void getGreetingDefault() {
 		ResponseEntity<String> response = this.restTemplate.getForEntity("/greetings",String.class);
 		assertEquals("Hello, ", response.getBody());
 	}
 	
 	@Test
-	public void testGreetingWithNameAndDefaultLocale(){
+	public void getGreetingWithNameAndDefaultLocale(){
 		ResponseEntity<String> response = this.restTemplate.getForEntity("/greetings?name=John", String.class);
 		assertEquals("Hello, John", response.getBody());
 	}
 	
 	
 	@Test
-	public void testGreetingWithNameAndLocale(){
+	public void getGreetingWithNameAndLocale(){
 		ResponseEntity<String> response = this.restTemplate.getForEntity("/greetings?lang=es&name=Clare", String.class);
 		
 		assertEquals("Hola, Clare", response.getBody());
